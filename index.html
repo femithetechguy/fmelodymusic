@@ -40,16 +40,16 @@
         <div class="collapse navbar-collapse" id="navMenu">
           <ul class="navbar-nav ms-auto" id="spa-nav">
             <li class="nav-item">
-              <a class="nav-link active" href="#" data-section="hero">Home</a>
+              <a class="nav-link active" href="#hero" data-section="hero">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" data-section="music">Music</a>
+              <a class="nav-link" href="#music" data-section="music">Music</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" data-section="about">About</a>
+              <a class="nav-link" href="#about" data-section="about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" data-section="contact">Contact</a>
+              <a class="nav-link" href="#contact" data-section="contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -62,7 +62,7 @@
         <div class="row align-items-center flex-column-reverse flex-lg-row">
           <div class="col-lg-6 text-center text-lg-start">
             <h1 class="display-1 fw-black mb-3 text-white animate-fadein">
-              FMelody
+              F Melody
             </h1>
             <h2 class="fw-bold mb-4 text-secondary animate-slidein">
               Musician • Producer • Dreamer
@@ -82,7 +82,7 @@
                 <i class="bi bi-play-fill me-1"></i> Listen Now
               </a>
               <a
-                href=""
+                href="#booking_div"
                 class="btn btn-outline-primary btn-lg rounded-pill px-4"
                 data-section="contact"
               >
@@ -368,19 +368,22 @@
               <div class="mt-3 music-platforms">
                 <a
                   href="https://open.spotify.com/track/4RVAW8DP8Rxgfwh4B0yshF"
-                  class="platform-link" target="_self"
+                  class="platform-link"
+                  target="_self"
                 >
                   <i class="bi bi-spotify"></i>
                 </a>
                 <a
                   href="https://music.apple.com/us/song/ltmd-letter-to-my-daughter/1754597869"
-                  class="platform-link" target="_self"
+                  class="platform-link"
+                  target="_self"
                 >
                   <i class="bi bi-apple"></i>
                 </a>
                 <a
                   href="https://www.youtube.com/watch?v=6R4OBYIO8b0&list=RD6R4OBYIO8b0&start_radio=1"
-                  class="platform-link" target="_self"
+                  class="platform-link"
+                  target="_self"
                 >
                   <i class="bi bi-youtube"></i>
                 </a>
@@ -388,14 +391,33 @@
             </div>
           </div>
         </div>
+        <div class="my-5 d-flex justify-content-center" id="booking_div">
+          <div
+            style="
+              height: 4px;
+              width: 220px;
+              border-radius: 2px;
+              background: linear-gradient(
+                90deg,
+                #6b7a8f 0%,
+                #bfc9d1 50%,
+                #e0e6ed 100%
+              );
+            "
+          ></div>
+        </div>
         <div class="text-center mt-5 animate-fadein">
           <a
-            href="#"
+            href="#contact"
             class="btn btn-outline-primary btn-lg rounded-pill px-4"
             data-section="contact"
           >
             <i class="bi bi-calendar2-check me-1"></i> Book for Event
           </a>
+          <div class="mt-2 text-muted small">
+            For bookings, collaborations, or event inquiries, click above to
+            contact me directly.
+          </div>
         </div>
       </div>
     </section>
