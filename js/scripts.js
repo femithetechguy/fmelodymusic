@@ -58,4 +58,72 @@ document.addEventListener('DOMContentLoaded', function() {
     const s = Math.floor(sec % 60);
     return m + ':' + (s < 10 ? '0' : '') + s;
   }
+
+  // Real-time lyrics for LTMD
+  const lyricsContainer = document.getElementById('lyrics-ltmd');
+  if (audio && lyricsContainer) {
+    const lines = Array.from(lyricsContainer.querySelectorAll('span')).map(span => ({
+      time: parseFloat(span.getAttribute('data-time')),
+      el: span
+    }));
+
+    audio.addEventListener('timeupdate', function() {
+      const current = audio.currentTime;
+      let activeIndex = -1;
+      for (let i = 0; i < lines.length; i++) {
+        if (current >= lines[i].time) activeIndex = i;
+        else break;
+      }
+      lines.forEach((line, idx) => {
+        if (idx === activeIndex) line.el.classList.add('active');
+        else line.el.classList.remove('active');
+      });
+    });
+
+    audio.addEventListener('seeked', function() {
+      audio.dispatchEvent(new Event('timeupdate'));
+    });
+  }
+
+  // Dynamic real-time lyrics for all cards (show only 3 lines)
+  document.querySelectorAll('.lyrics').forEach(lyricsContainer => {
+    const audioId = lyricsContainer.getAttribute('data-audio') || 'audio-ltmd';
+    const audio = document.getElementById(audioId);
+    if (!audio) return;
+    const lines = Array.from(lyricsContainer.querySelectorAll('span')).map(span => ({
+      time: parseFloat(span.getAttribute('data-time')),
+      el: span
+    }));
+
+    function updateLyrics() {
+      const current = audio.currentTime;
+      let activeIndex = -1;
+      for (let i = 0; i < lines.length; i++) {
+        if (current >= lines[i].time) activeIndex = i;
+        else break;
+      }
+      lines.forEach((line, idx) => {
+        line.el.classList.remove('prev', 'active', 'next');
+        if (idx === activeIndex - 1) line.el.classList.add('prev');
+        else if (idx === activeIndex) line.el.classList.add('active');
+        else if (idx === activeIndex + 1) line.el.classList.add('next');
+      });
+    }
+
+    audio.addEventListener('timeupdate', updateLyrics);
+    audio.addEventListener('seeked', updateLyrics);
+    updateLyrics();
+  });
+
+  // Get all spans with data-time
+  const spans = document.querySelectorAll('.lyrics span[data-time]');
+  
+  // Extract and log all times
+  const times = Array.from(spans).map(span => ({
+    time: span.getAttribute('data-time'),
+    text: span.textContent
+  }));
+
+  console.table(times); // Shows a nice table in browser console
 });
+
