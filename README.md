@@ -26,7 +26,7 @@ fmelody-music/
 ├── css/
 │   └── styles.css
 ├── js/
-│   └── script.js
+│   └── scripts.js
 ├── images/
 ├── index.html
 ```

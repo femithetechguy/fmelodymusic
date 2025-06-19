@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LTMD Audio Test</title>
+  <style>
+    .pulsate {
+      animation: pulsate 1s infinite alternate;
+    }
+    @keyframes pulsate {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(107,122,143,0.2);}
+      100% { transform: scale(1.08); box-shadow: 0 0 24px 8px rgba(107,122,143,0.25);}
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <img id="ltmd_cover" src="https://via.placeholder.com/120" style="width:120px; border-radius:1rem;">
+    <audio id="audio-ltmd" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    <button id="play-ltmd">
+      <i id="icon-ltmd" class="bi bi-play-fill"></i>
+      <span id="label-ltmd">Play</span>
+    </button>
+  </div>
+  <script>
+    const audio = document.getElementById('audio-ltmd');
+    const playBtn = document.getElementById('play-ltmd');
+    const cover = document.getElementById('ltmd_cover');
+    const icon = document.getElementById('icon-ltmd');
+    const label = document.getElementById('label-ltmd');
+
+    playBtn.addEventListener('click', function() {
+      if (audio.paused) {
+        audio.play();
+        icon.className = 'bi bi-stop-fill';
+        label.textContent = 'Stop';
+        cover.classList.add('pulsate');
+      } else {
+        audio.pause();
+        icon.className = 'bi bi-play-fill';
+        label.textContent = 'Play';
+        cover.classList.remove('pulsate');
+      }
+    });
+
+    audio.addEventListener('ended', function() {
+      icon.className = 'bi bi-play-fill';
+      label.textContent = 'Play';
+      cover.classList.remove('pulsate');
+    });
+  </script>
+</body>
+</html>

@@ -96,35 +96,32 @@
     <div class="container">
       <h2 class="display-4 fw-bold text-center mb-5 text-white animate-fadein">Latest Tracks</h2>
       <div class="row g-4 justify-content-center">
-        <div class="col-md-4">
-      <div class="col-md-4">
-      <div class="card music-card p-4 text-center animate-popin">
-        <svg width="70" height="70" viewBox="0 0 80 80" class="mb-3">
-          <circle cx="40" cy="40" r="36" fill="#bfc9d1"/>
-          <rect x="36" y="20" width="8" height="28" rx="4" fill="#6b7a8f"/>
-          <circle cx="40" cy="54" r="7" fill="#bfc9d1"/>
-        </svg>
-        <h5 class="fw-bold mb-1">LTMD</h5>
-        <div class="text-muted mb-2">Contemporary • 3:45</div>
-        <audio id="audio-soulful" src="audio/LTMD (Letter To My Daughter) [6R4OBYIO8b0].mp3"></audio>
-        <div class="d-flex align-items-center mb-2">
-          <button class="btn btn-primary rounded-pill px-3 play-btn me-2" data-audio="audio-soulful">
-            <i class="bi bi-play-fill me-1"></i><span>Play</span>
-          </button>
-          <select class="form-select form-select-sm w-auto play-speed" data-audio="audio-soulful">
-            <option value="0.5">0.5x</option>
-            <option value="1" selected>1x</option>
-            <option value="1.5">1.5x</option>
-            <option value="2">2x</option>
-          </select>
+        <div class="col-md-6 col-lg-4">
+          <div class="card music-card p-4 text-center">
+            <img id="ltmd_cover" class="ltmd_cover mb-3" src="images/ltmd_cover.jpg" alt="LTMD Cover" style="width:120px; border-radius:1rem;">
+            <h5 class="fw-bold mb-1">LTMD</h5>
+            <div class="text-muted mb-2">Contemporary • 3:45</div>
+            <audio id="audio-ltmd" src="audio/LTMD (Letter To My Daughter) [6R4OBYIO8b0].mp3"></audio>
+            <div class="d-flex align-items-center mb-2">
+              <button class="btn btn-primary rounded-pill px-3 play-btn me-2" id="play-ltmd">
+                <i class="bi bi-play-fill me-1"></i><span>Play</span>
+              </button>
+              <select class="form-select form-select-sm w-auto" id="speed-ltmd">
+                <option value="0.5">0.5x</option>
+                <option value="1" selected>1x</option>
+                <option value="1.5">1.5x</option>
+                <option value="2">2x</option>
+              </select>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+              <span id="current-ltmd" class="me-2" style="min-width:40px;">0:00</span>
+              <input type="range" min="0" max="100" value="0" class="form-range flex-grow-1" id="progress-ltmd" style="height:4px;">
+              <span id="duration-ltmd" class="ms-2" style="min-width:40px;">0:00</span>
+            </div>
+          </div>
         </div>
-        <div class="d-flex align-items-center mb-2">
-          <span id="current-audio-soulful" class="me-2" style="min-width:40px;">0:00</span>
-          <input type="range" min="0" max="100" value="0" class="form-range flex-grow-1 audio-progress" id="progress-audio-soulful" data-audio="audio-soulful" style="height:4px;">
-          <span id="duration-audio-soulful" class="ms-2" style="min-width:40px;">0:00</span>
-        </div>
+   
       </div>
-    </div>
       <div class="text-center mt-5 animate-fadein">
         <a href="#" class="btn btn-outline-primary btn-lg rounded-pill px-4" data-section="contact">
           <i class="bi bi-calendar2-check me-1"></i> Book for Event
@@ -215,6 +212,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>
