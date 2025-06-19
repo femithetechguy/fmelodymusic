@@ -236,29 +236,75 @@ body {
 .music-platforms {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;m;
+    margin-top: 1.5rem;   margin-top: 1.5rem;
+    padding: 1rem 0;    padding: 1rem 0;
+    border-top: 1px solid rgba(107,122,143,0.1);1px solid rgba(107,122,143,0.1);
 }
 
 .platform-link {
-    color: #6b7a8f;
-    font-size: 1.25rem;
-    transition: all 0.2s ease;
-}
+    color: #6b7a8f;   color: #6b7a8f;
+    font-size: 1.75rem;    font-size: 1.75rem;
+    transition: all 0.3s ease;3s ease;
+    padding: 0.5rem;rem;
+    border-radius: 50%;
+    background: rgba(107,122,143,0.05);   background: rgba(107,122,143,0.05);
+}}
 
 .platform-link:hover {
-    color: #000;
-    transform: translateY(-2px);
+    color: #fff;
+    transform: translateY(-3px);   transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* Platform-specific hover colors */
-.platform-link .bi-spotify:hover {
+/* Platform-specific styles */* Platform-specific styles */
+.platform-link .bi-spotify {.platform-link .bi-spotify {
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}    text-shadow: 0 0 10px rgba(255,0,0,0.3);    color: #FF0000;.platform-link:hover .bi-youtube {}    text-shadow: 0 0 10px rgba(252,60,68,0.3);    color: #FC3C44;.platform-link:hover .bi-apple {}    text-shadow: 0 0 10px rgba(29,185,84,0.3);    color: #1DB954;.platform-link:hover .bi-spotify {/* Platform-specific hover effects */}    transition: all 0.3s ease;.platform-link .bi-youtube {}    transition: all 0.3s ease;.platform-link .bi-apple {.platform-link .bi-apple {
+    transition: all 0.3s ease;
+}
+
+.platform-link .bi-youtube {
+    transition: all 0.3s ease;
+}
+
+/* Platform-specific hover effects */
+.platform-link:hover .bi-spotify {
     color: #1DB954;
+    text-shadow: 0 0 10px rgba(29,185,84,0.3);
 }
 
-.platform-link .bi-apple:hover {
+.platform-link:hover .bi-apple {
     color: #FC3C44;
+    text-shadow: 0 0 10px rgba(252,60,68,0.3);
 }
 
-.platform-link .bi-youtube:hover {
+.platform-link:hover .bi-youtube {
     color: #FF0000;
+    text-shadow: 0 0 10px rgba(255,0,0,0.3);
 }
