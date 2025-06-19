@@ -125,5 +125,35 @@ document.addEventListener('DOMContentLoaded', function() {
   }));
 
   console.table(times); // Shows a nice table in browser console
+
+  // Social links handling with mobile detection
+  document.querySelectorAll('.social-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const url = this.getAttribute('href');
+          
+          if (url && url !== '#') {
+              // Check if device is mobile
+              const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+              
+              if (isMobile) {
+                  // Open in same window on mobile
+                  window.location.href = url;
+              } else {
+                  // Open popup on desktop
+                  const width = Math.min(600, window.innerWidth - 40);
+                  const height = Math.min(600, window.innerHeight - 40);
+                  const left = (window.innerWidth - width) / 2;
+                  const top = (window.innerHeight - height) / 2;
+                  
+                  window.open(
+                      url,
+                      'social',
+                      `width=${width},height=${height},left=${left},top=${top},scrollbars=yes,resizable=yes`
+                  );
+              }
+          }
+      });
+  });
 });
 
