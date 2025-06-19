@@ -1,257 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-   <!-- basic -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- mobile metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-   <!-- site metas -->
-   <title></title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- bootstrap css -->
-   <link rel="stylesheet" href="css/bootstrap.min.css">
-   <!-- style css -->
-   <link rel="stylesheet" href="css/style.css">
-   <!-- responsive-->
-   <link rel="stylesheet" href="css/responsive.css">
-   <!-- awesome fontfamily -->
-   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-
-   <!-- Bootstrap Icons CDN -->
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-   <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-</head>
-<!-- body -->
-
-<body class="main-layout">
-   <!-- loader  -->
-   <div class="loader_bg">
-      <div class="loader"><img src="images/loading.gif" alt="" /></div>
-   </div>
-   <!-- end loader -->
-   <div id="mySidepanel" class="sidepanel">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-      <a class="active" href="#head-top">Home</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-   </div>
-   <!-- header -->
-   <header>
-      <!-- header inner -->
-      <div class="head-top" id="head-top">
-         <div class="container-fluid">
-            <div class="row d_flex">
-               <div class="col-sm-3">
-                  <div class="logo">
-                     <a href="index.html"><img src="images/logo.png" /></a>
-                  </div>
-               </div>
-               <div class="col-sm-9">
-                  <ul class="email text_align_right">
-                     <li> <button class="openbtn" onclick="openNav()"><img src="images/menu_btn.png"></button></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </div>
-   </header>
-   <!-- end header -->
-   <!-- start slider section -->
-   <div id="top_section" class=" banner_main">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FMelody – Musician & Producer</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <!-- Modern font: Urbanist -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap & Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
       <div class="container">
-         <div class="row d_flex">
-            <div class="col-md-6">
-               <div class="airmic">
-                  <h1>F Melody Music </h1>
-                  <p>F Melody is a versatile singer, instrumentalist, songwriter, composer, and producer known for his
-                     unique sound and genre-blending style. With a passion for creating music that resonates deeply with
-                     listeners, F Melody crafts soulful melodies, powerful lyrics, and dynamic compositions. Whether
-                     performing on stage or producing in the studio, his artistry shines through, making him a rising
-                     force in the music industry.
-                  </p>
-                  <a class="read_more" href="#songs">Listen</a>
-               </div>
-            </div>
-            <div class="col-md-6">
-               <div class="mic_img">
-                  <figure><img src="images/right_side.png" alt="#" /></figure>
-               </div>
-            </div>
-         </div>
+        <a class="navbar-brand fw-bold logo-text" href="#" data-section="hero"
+          >FMelody</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto" id="spa-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" data-section="hero">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-section="music">Music</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-section="about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-section="contact">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
-   </div>
-   <!-- end slider section -->
-   <!-- services -->
-   <div class="services">
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="spa-section active">
       <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="titlepage text_align_center">
-                  <h2 id="songs">Songs</h2>
-                  <h3><a href="https://www.youtube.com/channel/UCpgkiyarSmh0SFqNXzKvLzA" target="_self">Letter To My
-                        Daughter(LTMD)</a></h3>
-               </div>
+        <div class="row align-items-center flex-column-reverse flex-lg-row">
+          <div class="col-lg-6 text-center text-lg-start">
+            <h1 class="display-1 fw-black mb-3 text-white animate-fadein">
+              FMelody
+            </h1>
+            <h2 class="fw-bold mb-4 text-secondary animate-slidein">
+              Musician • Producer • Dreamer
+            </h2>
+            <p class="lead mb-4 text-muted animate-fadein">
+              Elevating souls with
+              <span class="text-primary">sound</span>.<br />
+              Gospel and Contemporary tunes.<br />
+              <span class="fw-bold">Let’s make your heart sing.</span>
+            </p>
+            <div class="mb-4 animate-popin">
+              <a
+                href="#music"
+                class="btn btn-primary btn-lg rounded-pill me-2 px-4"
+                data-section="music"
+              >
+                <i class="bi bi-play-fill me-1"></i> Listen Now
+              </a>
+              <a
+                href=""
+                class="btn btn-outline-primary btn-lg rounded-pill px-4"
+                data-section="contact"
+              >
+                <i class="bi bi-envelope me-1"></i> Book Me
+              </a>
             </div>
-         </div>
-         <div class="row">
-            <div class="col-md-3">
-               <div class="service_img_ text_align_center">
-                  <!-- <i><img src="images/service1.png" alt="#" /></i> -->
-                  <a href="https://open.spotify.com/artist/2rXxEu8ayfO8qxhKf92hZY" target="_self"><i
-                        class="fab fa-spotify"></i></a>
-               </div>
-               <div class="service_text text_align_center">
-               </div>
-            </div>
-            <div class="col-md-3">
-               <div class="service_img_ text_align_center">
-                  <!-- <i><img src="images/service2.png" alt="#" /></i> -->
-                  <a href="https://music.apple.com/us/artist/f-melody/1754305742" target="_self"><i
-                        class="fab fa-apple"></i></a>
-               </div>
-               <div class="service_text text_align_center">
-               </div>
-            </div>
-            <div class="col-md-3">
-               <div class="service_img_ text_align_center">
-                  <!-- <i><img src="images/service3.png" alt="#" /></i> -->
-                  <a href="https://www.youtube.com/channel/UCpgkiyarSmh0SFqNXzKvLzA" target="_self"><i
-                        class="fab fa-youtube"></i></a>
+            <div class="animate-fadein">
+              <a
+                href="https://www.instagram.com/folakol_melody/"
+                class="social-link"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="https://twitter.com/folakol_melody" class="social-link"
+                ><i class="bi bi-tiktok"></i
+              ></a>
 
-               </div>
-               <div class="service_text text_align_center">
-               </div>
+              <a href="https://twitter.com/folakol_melody" class="social-link"
+                ><i class="bi bi-twitter"></i
+              ></a>
+
+              <a
+                href="https://www.youtube.com/channel/UCpgkiyarSmh0SFqNXzKvLzA"
+                class="social-link"
+                ><i class="bi bi-youtube"></i
+              ></a>
+              <a
+                href="https://open.spotify.com/artist/2rXxEu8ayfO8qxhKf92hZY"
+                class="social-link"
+                ><i class="bi bi-spotify"></i
+              ></a>
+              <a
+                href="https://music.apple.com/us/artist/f-melody/1754305742"
+                class="social-link"
+                ><i class="bi bi-apple"></i
+              ></a>
+              <a
+                href="https://www.amazon.com/music/player/artists/B0CXQV73ZX/f-melody"
+                class="social-link"
+                title="Amazon Music"
+                ><i class="bi bi-music-note-beamed"></i
+              ></a>
             </div>
-            <div class="col-md-3">
-               <div class="service_img_ text_align_center">
-                  <!-- <i><img src="images/service1.png" alt="#" /></i> -->
-                  <a href="https://www.amazon.com/music/player/artists/B0CXQV73ZX/f-melody" target="_self"><i
-                        class="fab fa-amazon"></i></a>
-               </div>
-               <div class="service_text text_align_center">
-               </div>
-            </div>
-         </div>
+          </div>
+          <div class="col-lg-6 text-center mb-5 mb-lg-0">
+            <!-- Animated SVG -->
+            <svg class="hero-svg animate-rotate" viewBox="0 0 400 400">
+              <defs>
+                <radialGradient id="g1" cx="50%" cy="50%" r="80%">
+                  <stop offset="0%" stop-color="#bfc9d1" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#6b7a8f" stop-opacity="0.3" />
+                </radialGradient>
+                <linearGradient id="metallic" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#e0e6ed" />
+                  <stop offset="30%" stop-color="#bfc9d1" />
+                  <stop offset="60%" stop-color="#6b7a8f" />
+                  <stop offset="100%" stop-color="#e0e6ed" />
+                </linearGradient>
+              </defs>
+              <circle cx="200" cy="200" r="160" fill="url(#g1)" />
+              <g>
+                <rect
+                  x="190"
+                  y="80"
+                  width="20"
+                  height="160"
+                  rx="10"
+                  fill="url(#metallic)"
+                >
+                  <animate
+                    attributeName="y"
+                    values="80;120;80"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                <circle
+                  cx="200"
+                  cy="260"
+                  r="24"
+                  fill="#fff"
+                  stroke="url(#metallic)"
+                  stroke-width="6"
+                />
+                <rect
+                  x="220"
+                  y="120"
+                  width="12"
+                  height="80"
+                  rx="6"
+                  fill="#bfc9d1"
+                >
+                  <animate
+                    attributeName="y"
+                    values="120;160;120"
+                    dur="2.2s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+                <rect
+                  x="168"
+                  y="130"
+                  width="12"
+                  height="60"
+                  rx="6"
+                  fill="#bfc9d1"
+                >
+                  <animate
+                    attributeName="y"
+                    values="130;170;130"
+                    dur="1.8s"
+                    repeatCount="indefinite"
+                  />
+                </rect>
+              </g>
+            </svg>
+          </div>
+        </div>
       </div>
-   </div>
-   <!-- end services -->
-   <!-- about -->
-   <div id="about" class="about">
-      <div class="container-fluid">
-         <div class="row d_flex">
-            <div class="col-md-6">
-               <div class="titlepage text_align_left">
-                  <h2>About F Melody</h2>
-                  <p>Coming soon...</p>
-                  <a class="read_more" href="#about">Read More</a>
-               </div>
-            </div>
-            <div class="col-md-6">
-               <div class="about_img">
-                  <figure><img class="img_responsive" src="images/about_img.jpg" alt="#" /></figure>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- end about -->
-   <!-- contact section -->
-   <div class="contact left_cross_right" id="contact">
+    </section>
+
+    <!-- MUSIC -->
+    <section id="music" class="spa-section">
       <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="titlepage text_align_left">
-                  <h2>Contact & Bookings</h2>
-                  <p>I look forward to hearing from you!</p>
-               </div>
-            </div>
-            <div class="col-md-12">
-               <form id="request" class="main_form">
-                  <div class="row">
-                     <div class="col-md-12 ">
-                        <input class="contactus" placeholder="You Name" type="type" name="Name">
-                     </div>
-                     <div class="col-md-6">
-                        <input class="contactus" placeholder="Email" type="type" name="Email">
-                     </div>
-                     <div class="col-md-6">
-                        <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">
-                     </div>
-                     <div class="col-md-12">
-                        <textarea class="textarea" placeholder="Message" type="Message"></textarea>
-                     </div>
-                     <div class="col-md-12">
-                        <button class="send_btn">Send</button>
-                     </div>
-                  </div>
-               </form>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- end contact section -->
-   <!-- footer -->
-   <footer>
-      <div class="footer">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <a class="logo_footer" href="index.html"><img src="images/logo.png" alt="#" /></a>
-               </div>
-               <div class="col-md-5">
-                  <div class="Informa helpful">
-                     <ul>
-                        <li><a href="#head-top">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-4">
-                  <ul class="social_icon text_align_center">
-                     <li> <a href="https://twitter.com/folakol_melody" target="_self"><i class="fab fa-twitter"></i></a>
-                     </li>
-                     <li> <a href="https://www.tiktok.com/@folakol_melody" target="_self"><i
-                              class="fab fa-tiktok"></i></a></li>
-                     <li> <a href="https://www.instagram.com/folakol_melody/" target="_self"><i class="fab fa-instagram"
-                              aria-hidden="true"></i></a></li>
-                  </ul>
-               </div>
-               <div class="col-md-3">
-               </div>
-            </div>
-         </div>
-         <div class="copyright text_align_center">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-10 offset-md-1">
-                     <!-- <p>© 2020 All Rights Reserved. Design by  <a href="https://html.design/"> Free Html Template</a></p> -->
-                     &copy;
-                     <script>document.write(new Date().getFullYear())</script> Crafted With <i class="bi bi-heart"></i>
-                     By <a class="border-bottom" href="https://femithetechguy.com/" target="_blank"> Tech Guy</a>
+        <h2
+          class="display-4 fw-bold text-center mb-5 text-white animate-fadein"
+        >
+          Latest Tracks
+        </h2>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-4">
+            <div class="card music-card p-4 text-center">
+              <img
+                id="ltmd_cover"
+                class="ltmd_cover mb-3"
+                src="images/ltmd_cover.jpg"
+                alt="LTMD Cover"
+                style="width: 120px; border-radius: 1rem"
+              />
+              <h5 class="fw-bold mb-1">LTMD</h5>
+              <div class="text-muted mb-2">Contemporary • 3:45</div>
+              <audio
+                id="audio-ltmd"
+                src="audio/LTMD (Letter To My Daughter) [6R4OBYIO8b0].mp3"
+              ></audio>
+              <div class="d-flex align-items-center mb-2">
+                <button
+                  class="btn btn-primary rounded-pill px-3 play-btn me-2"
+                  id="play-ltmd"
+                >
+                  <i class="bi bi-play-fill me-1"></i><span>Play</span>
+                </button>
+                <select
+                  class="form-select form-select-sm w-auto"
+                  id="speed-ltmd"
+                >
+                  <option value="0.5">0.5x</option>
+                  <option value="1" selected>1x</option>
+                  <option value="1.5">1.5x</option>
+                  <option value="2">2x</option>
+                </select>
+              </div>
+              <div class="d-flex align-items-center mb-2">
+                <span id="current-ltmd" class="me-2" style="min-width: 40px"
+                  >0:00</span
+                >
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="0"
+                  class="form-range flex-grow-1"
+                  id="progress-ltmd"
+                  style="height: 4px"
+                />
+                <span id="duration-ltmd" class="ms-2" style="min-width: 40px"
+                  >0:00</span
+                >
+              </div>
+              <div id="lyrics-ltmd" class="lyrics mt-3" style="min-height: 2em">
+                <span data-time="0">Music...</span>
+                <span data-time="1">Dad: Say Hi</span>
+                <span data-time="2">Daughter: Babbles</span>
+                <span data-time="5">Dad: Yes</span>
+                <span data-time="6">Daughter: Babbles</span>
+                <span data-time="9">DAD: I know</span>
+                <span data-time="10">This is a letter to my daughter</span>
+                <span data-time="12">It's a letter to my princess</span>
+                <span data-time="15">You're the best gift I've ever had</span>
+                <span data-time="18">I love you with all my heart</span>
+                <span data-time="20">Though daddy ain't no astronaut</span>
+                <span data-time="22"
+                  >But for you I'll fly to the moon and back</span
+                >
+                <span data-time="26">I know I'm not a soldier</span>
+                <span data-time="28">But I'll catch a bullet for you</span>
 
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </footer>
-   <!-- end footer -->
-   <!-- Javascript files-->
-   <script src="js/jquery.min.js"></script>
-   <script src="js/bootstrap.bundle.min.js"></script>
-   <script src="js/jquery-3.0.0.min.js"></script>
-   <script src="js/custom.js"></script>
-   <!-- Link Extra Script -->
-   <script type="text/javascript" src="js/extrascript.js"></script>
-</body>
+                <span data-time="30">This is a letter to my daughter</span>
+                <span data-time="32">It's a letter to my princess</span>
+                <span data-time="35">You're the best gift I've ever had</span>
+                <span data-time="38">I love you with all my heart</span>
+                <span data-time="40">Though daddy ain't no astronaut</span>
+                <span data-time="44"
+                  >But for you I'll fly to the moon and back</span
+                >
+                <span data-time="47">I know I'm not a soldier</span>
+                <span data-time="42">But I'll catch a bullet for you</span>
 
+                <span data-time="74"
+                  >Children are gifts from the most high God</span
+                >
+                <span data-time="78">The fruit of the womb, his reward</span>
+                <span data-time="82"
+                  >Just like arrows in the hand of a warrior</span
+                >
+                <span data-time="86">So are little ones when they're born</span>
+
+                <span data-time="90">This is a letter to my daughter</span>
+                <span data-time="94">It's a letter to my princess</span>
+                <span data-time="98">You're the best gift I've ever had</span>
+                <span data-time="102">I love you with all my heart</span>
+                <span data-time="106">Though daddy ain't no astronaut</span>
+                <span data-time="110"
+                  >But for you I'll fly to the moon and back</span
+                >
+                <span data-time="114">I know I'm not a soldier</span>
+                <span data-time="118">But I'll catch a bullet for you</span>
+
+                <span data-time="122">This is a letter to my daughter</span>
+                <span data-time="126">It's a letter to my princess</span>
+                <span data-time="130">You're the best gift I've ever had</span>
+                <span data-time="134">I love you with all my heart</span>
+                <span data-time="138">Though daddy ain't no astronaut</span>
+                <span data-time="142"
+                  >But for you I'll fly to the moon and back</span
+                >
+                <span data-time="146">I know I'm not a soldier</span>
+                <span data-time="150">But I'll catch a bullet for you</span>
+
+                <span data-time="154">Dear daughter, yes its dad again</span>
+                <span data-time="158">I just dropped you a mail</span>
+                <span data-time="162">Hope it doesn't get delayed</span>
+                <span data-time="166"
+                  >I pray you put God first in everything you plan</span
+                >
+                <span data-time="170"
+                  >And I pray that you stay pure this world is filled with
+                  lust.</span
+                >
+
+                <span data-time="174">Omo mi owon</span>
+                <span data-time="178">Through the thick and the thin</span>
+                <span data-time="182">The hard and the easy</span>
+                <span data-time="186">I will never forget you</span>
+                <span data-time="190">And if other people leave</span>
+                <span data-time="194">I will never desert you</span>
+                <span data-time="198">And in case you drop the ball</span>
+                <span data-time="202">I'm the right person to talk to</span>
+
+                <span data-time="206">This is a letter to my daughter</span>
+                <span data-time="210">It's a letter to my princess</span>
+                <span data-time="214">You're the best gift I've ever had</span>
+                <span data-time="218">I love you with all my heart</span>
+                <span data-time="222">Though daddy ain't no astronaut</span>
+                <span data-time="226"
+                  >But for you I'll fly to the moon and back</span
+                >
+                <span data-time="230">I know I'm not a soldier</span>
+                <span data-time="234">But I'll catch a bullet for you</span>
+
+                <span data-time="238">This is a letter to my daughter</span>
+                <span data-time="242">It's a letter to my princess</span>
+                <span data-time="246">You're the best gift I've ever had</span>
+                <span data-time="250">I love you with all my heart</span>
+                <span data-time="254">Though daddy ain't no astronaut</span>
+                <span data-time="258"
+                  >But for you I'll fly to the moon and back</span
+                >
+                <span data-time="262">I know I'm not a soldier</span>
+                <span data-time="266">But I'll catch a bullet for you</span>
+              </div>
+
+              <!-- Add this after the progress bar div -->
+              <div class="mt-3 music-platforms">
+                <a
+                  href="https://open.spotify.com/track/4RVAW8DP8Rxgfwh4B0yshF"
+                  class="platform-link" target="_self"
+                >
+                  <i class="bi bi-spotify"></i>
+                </a>
+                <a
+                  href="https://music.apple.com/us/song/ltmd-letter-to-my-daughter/1754597869"
+                  class="platform-link" target="_self"
+                >
+                  <i class="bi bi-apple"></i>
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=6R4OBYIO8b0&list=RD6R4OBYIO8b0&start_radio=1"
+                  class="platform-link" target="_self"
+                >
+                  <i class="bi bi-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5 animate-fadein">
+          <a
+            href="#"
+            class="btn btn-outline-primary btn-lg rounded-pill px-4"
+            data-section="contact"
+          >
+            <i class="bi bi-calendar2-check me-1"></i> Book for Event
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="spa-section">
+      <div class="container">
+        <div class="row align-items-center flex-column-reverse flex-md-row">
+          <div class="col-md-6 text-center text-md-start">
+            <h2 class="display-4 fw-bold mb-3 metallic-text animate-fadein">
+              About Me
+            </h2>
+            <p class="lead text-muted mb-3 animate-slidein">
+              I’m Folakol Melody, a passionate musician, songwriter, and
+              producer. My music fuses Gospel, R&B, and Contemporary styles,
+              creating a unique sound that inspires and uplifts.
+            </p>
+            <p class="mb-4 text-secondary animate-fadein">
+              Every track is crafted with heart, soul, and a touch of the
+              divine. Let’s create something unforgettable together.
+            </p>
+            <a
+              href="#music"
+              class="btn btn-primary rounded-pill px-4 animate-popin"
+              data-section="music"
+              >Listen to My Music</a
+            >
+          </div>
+          <div class="col-md-6 text-center mb-4 mb-md-0">
+            <!-- SVG Portrait -->
+            <svg class="about-svg animate-rotate" viewBox="0 0 220 220">
+              <defs>
+                <linearGradient id="metallic2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#e0e6ed" />
+                  <stop offset="30%" stop-color="#bfc9d1" />
+                  <stop offset="60%" stop-color="#6b7a8f" />
+                  <stop offset="100%" stop-color="#e0e6ed" />
+                </linearGradient>
+              </defs>
+              <circle cx="110" cy="80" r="60" fill="url(#metallic2)" />
+              <ellipse cx="110" cy="170" rx="55" ry="30" fill="#e0e6ed" />
+              <circle cx="110" cy="80" r="50" fill="#bfc9d1" opacity="0.5" />
+              <ellipse
+                cx="110"
+                cy="170"
+                rx="40"
+                ry="18"
+                fill="#6b7a8f"
+                opacity="0.2"
+              />
+              <text
+                x="110"
+                y="90"
+                text-anchor="middle"
+                fill="#6b7a8f"
+                font-size="22"
+                font-weight="bold"
+                font-family="Urbanist"
+              >
+                FM
+              </text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="spa-section">
+      <div class="container">
+        <h2
+          class="display-4 fw-bold text-center mb-4 metallic-text animate-fadein"
+        >
+          Contact
+        </h2>
+        <div class="row justify-content-center">
+          <div class="col-md-7">
+            <div class="card contact-card p-4 animate-popin">
+              <form action="https://formspree.io/f/xdkzdjzo" method="POST">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Your name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Your email address"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                    placeholder="Your message"
+                  ></textarea>
+                </div>
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-primary rounded-pill px-4"
+                  >
+                    <i class="bi bi-send me-2"></i> Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div>
+        <span class="fw-bold metallic-text">FMelody</span> &copy; 2025. All
+        rights reserved.
+        <div class="mt-2">
+          <a
+            href="https://www.instagram.com/folakol_melody/"
+            class="social-link"
+            ><i class="bi bi-instagram"></i
+          ></a>
+          <a href="https://twitter.com/folakol_melody" class="social-link"
+            ><i class="bi bi-tiktok"></i
+          ></a>
+
+          <a href="https://twitter.com/folakol_melody" class="social-link"
+            ><i class="bi bi-twitter"></i
+          ></a>
+
+          <a
+            href="https://www.youtube.com/channel/UCpgkiyarSmh0SFqNXzKvLzA"
+            class="social-link"
+            ><i class="bi bi-youtube"></i
+          ></a>
+          <a
+            href="https://open.spotify.com/artist/2rXxEu8ayfO8qxhKf92hZY"
+            class="social-link"
+            ><i class="bi bi-spotify"></i
+          ></a>
+          <a
+            href="https://music.apple.com/us/artist/f-melody/1754305742"
+            class="social-link"
+            ><i class="bi bi-apple"></i
+          ></a>
+          <a
+            href="https://www.amazon.com/music/player/artists/B0CXQV73ZX/f-melody"
+            class="social-link"
+            title="Amazon Music"
+            ><i class="bi bi-music-note-beamed"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="social-modal" id="socialModal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <iframe id="socialFrame" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>

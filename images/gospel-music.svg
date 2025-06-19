@@ -1,0 +1,24 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="200" rx="24" fill="#F9F6F2"/>
+    <g>
+        <!-- Sun rays for uplifting/gospel feel -->
+        <g opacity="0.5">
+            <line x1="100" y1="30" x2="100" y2="10" stroke="#FFD700" stroke-width="4"/>
+            <line x1="100" y1="30" x2="120" y2="15" stroke="#FFD700" stroke-width="4"/>
+            <line x1="100" y1="30" x2="80" y2="15" stroke="#FFD700" stroke-width="4"/>
+        </g>
+        <!-- Cross symbol -->
+        <rect x="92" y="50" width="16" height="60" rx="6" fill="#8B5E3C"/>
+        <rect x="80" y="75" width="40" height="14" rx="5" fill="#8B5E3C"/>
+        <!-- Music note (eighth note) -->
+        <ellipse cx="140" cy="120" rx="10" ry="14" fill="#FFD700" stroke="#8B5E3C" stroke-width="2"/>
+        <rect x="138" y="70" width="4" height="40" rx="2" fill="#8B5E3C"/>
+        <path d="M142 70 Q155 80 142 90" stroke="#8B5E3C" stroke-width="3" fill="none"/>
+        <!-- Subtle clouds for softness -->
+        <ellipse cx="60" cy="140" rx="18" ry="10" fill="#C19A6B" opacity="0.18"/>
+        <ellipse cx="80" cy="145" rx="12" ry="7" fill="#C19A6B" opacity="0.12"/>
+        <!-- Text -->
+        <text x="100" y="180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#8B5E3C" font-weight="bold">Gospel</text>
+        <text x="100" y="195" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#C19A6B">Music</text>
+    </g>
+</svg>
