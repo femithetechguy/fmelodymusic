@@ -9,29 +9,38 @@ Welcome to the official website of **F Melody (Folakol Melody)**!
 
 ---
 
-## 🎶 About Me
+## ⚡️ Tech Stack
 
-I blend the soulful rhythms of **Gospel**, the smooth vibes of **R&B**, and the fresh sounds of **Contemporary** music.  
-Every melody is crafted with passion, purpose, and a touch of inspiration.
+This project is built with:
+
+- **HTML5** – Semantic markup for structure.
+- **CSS3 / Tailwind CSS / Bootstrap** – Utility-first and component-based styling.
+- **JavaScript** – Interactive features and custom scripts.
 
 ---
 
-## 🌟 Connect & Listen
+## 📁 Directory Structure
 
-- Explore my latest tracks
-- Discover behind-the-scenes stories
-- Join a community that celebrates music with meaning
+```plaintext
+fmelody-music/
+├── css/
+│   └── styles.css
+├── js/
+│   └── script.js
+├── images/
+├── index.html
+```
+```
 
-<p align="center">
-    <img width="200" height="40" src="images/waveform.svg" alt="Waveform SVG"/>
-</p>
+- **CSS**: Stylesheets (Bootstrap, Tailwind, custom) are in `assets/css/`.
+- **JavaScript**: Scripts (Bootstrap, custom) are in `assets/js/`.
+- **Images & Fonts**: Stored in `assets/images/` and `assets/fonts/`.
+- **Pages**: Main site pages (`index.html`, `music.html`, `about.html`, `contact.html`) are at the root.
 
 ---
 
 > *Let the melody move you.*
 
----
-
 <p align="center">
-    <img width="100" height="100" src="images/gospel-music.svg" alt="Gospel SVG"/>
+    <img width="200" height="40" src="images/waveform.svg" alt="Waveform SVG"/>
 </p>
