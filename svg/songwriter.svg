@@ -46,6 +46,12 @@
                 <feMergeNode in="SourceGraphic"/>
             </feMerge>
         </filter>
+        
+        <!-- Add animation path -->
+        <path id="writing-motion" 
+              d="M200,180 C250,175 300,185 350,180 S400,175 450,180" 
+              fill="none" 
+              stroke="none"/>
     </defs>
 
     <!-- Paper with staff lines - scaled up -->
@@ -98,55 +104,65 @@
         </g>
     </g>
 
-    <!-- Writing arm - adjusted position -->
-    <g class="writing-arm" filter="url(#shadow)" transform="translate(0, 100)">
-        <!-- Forearm -->
-        <path d="M380 160 
-                 C360 150, 340 140, 320 150 
-                 S300 155, 290 152" 
-              stroke="url(#skin-tone)" 
-              stroke-width="28" 
-              stroke-linecap="round"
-              fill="none"/>
+    <!-- Writing arm and pen animation -->
+    <g class="writing-arm-container">
+        <animateMotion
+            dur="4s"
+            repeatCount="indefinite"
+            path="M0,0 C50,-5 100,5 150,0 S200,-5 250,0"
+            rotate="auto">
+        </animateMotion>
         
-        <!-- Hand details -->
-        <path d="M295 152 
-                 C290 150, 285 150, 280 152 
-                 C275 154, 272 156, 270 160"
-              stroke="url(#skin-tone)" 
-              stroke-width="20" 
-              stroke-linecap="round"
-              fill="none"/>
-        
-        <!-- Thumb -->
-        <path d="M285 145 
-                 C282 142, 280 140, 278 142"
-              stroke="url(#skin-tone)" 
-              stroke-width="12" 
-              stroke-linecap="round"
-              fill="none"/>
-    </g>
+        <!-- Writing arm - adjusted position -->
+        <g class="writing-arm" filter="url(#shadow)">
+            <!-- Forearm -->
+            <path d="M380 160 
+                     C360 150, 340 140, 320 150 
+                     S300 155, 290 152" 
+                  stroke="url(#skin-tone)" 
+                  stroke-width="28" 
+                  stroke-linecap="round"
+                  fill="none"/>
+            
+            <!-- Hand details -->
+            <path d="M295 152 
+                     C290 150, 285 150, 280 152 
+                     C275 154, 272 156, 270 160"
+                  stroke="url(#skin-tone)" 
+                  stroke-width="20" 
+                  stroke-linecap="round"
+                  fill="none"/>
+            
+            <!-- Thumb -->
+            <path d="M285 145 
+                     C282 142, 280 140, 278 142"
+                  stroke="url(#skin-tone)" 
+                  stroke-width="12" 
+                  stroke-linecap="round"
+                  fill="none"/>
+        </g>
 
-    <!-- Enhanced pen - adjusted position -->
-    <g class="pen" filter="url(#shadow)" transform="translate(0, 100)">
-        <!-- Pen body -->
-        <path d="M275 155 L245 185" 
-              stroke="url(#pen-metallic)" 
-              stroke-width="8" 
-              stroke-linecap="round"/>
-        
-        <!-- Pen tip -->
-        <path d="M245 185 L242 188" 
-              stroke="#000" 
-              stroke-width="2" 
-              stroke-linecap="round"/>
-        
-        <!-- Pen grip -->
-        <path d="M270 160 L260 170" 
-              stroke="#1a1a1a" 
-              stroke-width="9" 
-              stroke-linecap="round"
-              opacity="0.3"/>
+        <!-- Enhanced pen - adjusted position -->
+        <g class="pen" filter="url(#shadow)">
+            <!-- Pen body -->
+            <path d="M275 155 L245 185" 
+                  stroke="url(#pen-metallic)" 
+                  stroke-width="8" 
+                  stroke-linecap="round"/>
+            
+            <!-- Pen tip -->
+            <path d="M245 185 L242 188" 
+                  stroke="#000" 
+                  stroke-width="2" 
+                  stroke-linecap="round"/>
+            
+            <!-- Pen grip -->
+            <path d="M270 160 L260 170" 
+                  stroke="#1a1a1a" 
+                  stroke-width="9" 
+                  stroke-linecap="round"
+                  opacity="0.3"/>
+        </g>
     </g>
 
     <!-- Writing animation path -->

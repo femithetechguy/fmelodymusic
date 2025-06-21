@@ -59,104 +59,100 @@ document.addEventListener("DOMContentLoaded", function () {
     return m + ":" + (s < 10 ? "0" : "") + s;
   }
 
-  // Real-time lyrics for LTMD
-  const lyricsContainer = document.getElementById("lyrics-ltmd");
-  if (audio && lyricsContainer) {
-    const lines = Array.from(lyricsContainer.querySelectorAll("span")).map(
-      (span) => ({
-        time: parseFloat(span.getAttribute("data-time")),
-        el: span,
-      })
-    );
+  // Update the setupLyrics function
+  function setupLyrics() {
+    const lyricsContainer = document.getElementById("lyrics-ltmd");
+    const audio = document.getElementById("audio-ltmd");
 
-    audio.addEventListener("timeupdate", function () {
-      const current = audio.currentTime;
-      let activeIndex = -1;
-      for (let i = 0; i < lines.length; i++) {
-        if (current >= lines[i].time) activeIndex = i;
-        else break;
+    if (audio && lyricsContainer) {
+      const lines = Array.from(lyricsContainer.querySelectorAll("span")).map(
+        (span) => ({
+          time: parseFloat(span.getAttribute("data-time")),
+          el: span,
+        })
+      );
+
+      // Initially hide all lines
+      lines.forEach((line) => (line.el.style.display = "none"));
+
+      // Show first three lines at start
+      if (lines.length >= 3) {
+        lines[0].el.classList.add("previous");
+        lines[1].el.classList.add("active");
+        lines[2].el.classList.add("next");
       }
-      lines.forEach((line, idx) => {
-        if (idx === activeIndex) line.el.classList.add("active");
-        else line.el.classList.remove("active");
-      });
-    });
 
-    audio.addEventListener("seeked", function () {
-      audio.dispatchEvent(new Event("timeupdate"));
-    });
-  }
+      audio.addEventListener("timeupdate", function () {
+        const current = audio.currentTime;
+        let activeIndex = 0;
 
-  // Dynamic real-time lyrics for all cards (show only 3 lines)
-  document.querySelectorAll(".lyrics").forEach((lyricsContainer) => {
-    const audioId = lyricsContainer.getAttribute("data-audio") || "audio-ltmd";
-    const audio = document.getElementById(audioId);
-    if (!audio) return;
-    const lines = Array.from(lyricsContainer.querySelectorAll("span")).map(
-      (span) => ({
-        time: parseFloat(span.getAttribute("data-time")),
-        el: span,
-      })
-    );
+        // Find current active line
+        for (let i = 0; i < lines.length; i++) {
+          if (current >= lines[i].time) {
+            activeIndex = i;
+          } else {
+            break;
+          }
+        }
 
-    function updateLyrics() {
-      const current = audio.currentTime;
-      let activeIndex = -1;
-      for (let i = 0; i < lines.length; i++) {
-        if (current >= lines[i].time) activeIndex = i;
-        else break;
-      }
-      lines.forEach((line, idx) => {
-        line.el.classList.remove("prev", "active", "next");
-        if (idx === activeIndex - 1) line.el.classList.add("prev");
-        else if (idx === activeIndex) line.el.classList.add("active");
-        else if (idx === activeIndex + 1) line.el.classList.add("next");
+        // Hide all lines first
+        lines.forEach((line) => {
+          line.el.style.display = "none";
+          line.el.classList.remove("active", "previous", "next");
+        });
+
+        // Always show three lines
+        const prevIndex = Math.max(0, activeIndex - 1);
+        const nextIndex = Math.min(lines.length - 1, activeIndex + 1);
+
+        // Show previous line if available
+        if (prevIndex >= 0) {
+          lines[prevIndex].el.style.display = "block";
+          lines[prevIndex].el.classList.add("previous");
+        }
+
+        // Show active line
+        lines[activeIndex].el.style.display = "block";
+        lines[activeIndex].el.classList.add("active");
+
+        // Show next line if available
+        if (nextIndex < lines.length) {
+          lines[nextIndex].el.style.display = "block";
+          lines[nextIndex].el.classList.add("next");
+        }
       });
     }
+  }
 
-    audio.addEventListener("timeupdate", updateLyrics);
-    audio.addEventListener("seeked", updateLyrics);
-    updateLyrics();
-  });
+  // Update the loadLyrics function to call setupLyrics after loading content
+  async function loadLyrics() {
+    try {
+      console.log("Starting lyrics load...");
+      const response = await fetch("lyrics/ltmd.html");
 
-  // Get all spans with data-time
-  const spans = document.querySelectorAll(".lyrics span[data-time]");
-
-  // Extract and log all times
-  const times = Array.from(spans).map((span) => ({
-    time: span.getAttribute("data-time"),
-    text: span.textContent,
-  }));
-
-  console.table(times); // Shows a nice table in browser console
-
-  // Social links handling with mobile detection
-  document.querySelectorAll(".social-link").forEach((link) => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const url = this.getAttribute("href");
-
-      if (url && url !== "#") {
-        // Check if device is mobile
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-        if (isMobile) {
-          // Open in same window on mobile
-          window.location.href = url;
-        } else {
-          // Open popup on desktop
-          const width = Math.min(600, window.innerWidth - 40);
-          const height = Math.min(600, window.innerHeight - 40);
-          const left = (window.innerWidth - width) / 2;
-          const top = (window.innerHeight - height) / 2;
-
-          window.open(
-            url,
-            "social",
-            `width=${width},height=${height},left=${left},top=${top},scrollbars=yes,resizable=yes`
-          );
-        }
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    });
-  });
+
+      console.log("Lyrics fetched, parsing response...");
+      const lyrics = await response.text();
+
+      const lyricsContainer = document.getElementById("lyrics-ltmd");
+      if (!lyricsContainer) {
+        throw new Error("Lyrics container not found!");
+      }
+
+      lyricsContainer.innerHTML = lyrics;
+      console.log("Lyrics loaded successfully");
+
+      // Set up lyrics functionality after content is loaded
+      setupLyrics();
+    } catch (error) {
+      console.error("Error loading lyrics:", error);
+      document.getElementById("lyrics-ltmd").innerHTML = `<span class="text-danger">Failed to load lyrics: ${error.message}</span>`;
+    }
+  }
+
+  // Call loadLyrics directly since we're already inside DOMContentLoaded
+  loadLyrics();
 });

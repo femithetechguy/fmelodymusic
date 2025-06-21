@@ -122,40 +122,46 @@ body {
   border: 4px solid #bfc9d1;
 }
 .lyrics {
-    min-height: 4.5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px; /* Reduced from 90px */
+  padding: 0.25rem; /* Reduced from 0.5rem */
+  line-height: 1.2; /* Reduced from 1.4 */
 }
 
 .lyrics span {
-    display: block;
-    color: #888;
-    transition: all 0.3s ease;
-    opacity: 0.3;
-    height: 1.5em;
-    overflow: hidden;
-    font-size: 1em;
+  display: none;
+  width: 100%;
+  text-align: center;
+  padding: 0.15rem 0; /* Reduced from 0.25rem */
+  transition: all 0.3s ease;
+  margin: 1px 0; /* Reduced from 2px */
 }
 
-.lyrics .active {
-    color: #222;
-    font-weight: 700;
-    opacity: 1;
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.08);
+.lyrics span.previous {
+  display: block;
+  opacity: 0.6;
+  transform: translateY(0);
+  font-size: 0.9em;
 }
 
-.lyrics .prev,
-.lyrics .next {
-    color: #555;
-    opacity: 0.8;
+.lyrics span.active {
+  display: block;
+  opacity: 1;
+  font-weight: bold;
+  color: #000000;
+  transform: translateY(0);
+  font-size: 1em;
+  margin: 2px 0; /* Reduced from 4px */
 }
 
-.lyrics span:not(.active):not(.prev):not(.next) {
-    opacity: 0;
-    height: 0;
-    pointer-events: none;
+.lyrics span.next {
+  display: block;
+  opacity: 0.6;
+  transform: translateY(0);
+  font-size: 0.9em;
 }
 
 /* Animations */
@@ -323,4 +329,53 @@ textarea#message:-ms-input-placeholder {
 .contact-bg h2 {
   background: transparent;
   text-align: center;
+}
+
+/* Add writing animation styles */
+.writing-arm-container {
+    animation: writeAcross 4s infinite ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes writeAcross {
+    0% {
+        transform: translateX(-50px) rotate(2deg);
+    }
+    50% {
+        transform: translateX(50px) rotate(-2deg);
+    }
+    100% {
+        transform: translateX(-50px) rotate(2deg);
+    }
+}
+
+.writing-arm {
+    animation: armTilt 4s infinite ease-in-out;
+    transform-origin: right bottom;
+}
+
+@keyframes armTilt {
+    0% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(-2deg);
+    }
+}
+
+.pen {
+    animation: penPressure 4s infinite ease-in-out;
+    transform-origin: bottom right;
+}
+
+@keyframes penPressure {
+    0%, 100% {
+        transform: scaleY(1) rotate(-2deg);
+    }
+    50% {
+        transform: scaleY(0.95) rotate(2deg);
+    }
 }
