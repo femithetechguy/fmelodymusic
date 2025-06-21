@@ -242,7 +242,6 @@ body {
 }
 
 .platform-link:hover {
-    color: #fff;
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -252,19 +251,44 @@ body {
     transition: all 0.3s ease;
 }
 
-.platform-link:hover .bi-spotify {
+.platform-link:hover .bi-spotify,
+.social-link:hover .bi-spotify {
     color: #1DB954;
     text-shadow: 0 0 10px rgba(29,185,84,0.3);
 }
 
-.platform-link:hover .bi-apple {
+.platform-link:hover .bi-apple,
+.social-link:hover .bi-apple {
     color: #FC3C44;
     text-shadow: 0 0 10px rgba(252,60,68,0.3);
 }
 
-.platform-link:hover .bi-youtube {
+.platform-link:hover .bi-youtube,
+.social-link:hover .bi-youtube {
     color: #FF0000;
     text-shadow: 0 0 10px rgba(255,0,0,0.3);
+}
+
+.platform-link:hover .bi-instagram,
+.social-link:hover .bi-instagram {
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    filter: drop-shadow(0 0 8px rgba(220,39,67,0.3));
+}
+
+.platform-link:hover .bi-tiktok,
+.social-link:hover .bi-tiktok {
+    color: #000000;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.platform-link:hover .bi-twitter,
+.social-link:hover .bi-twitter {
+    color: #1DA1F2;
+    text-shadow: 0 0 10px rgba(29,161,242,0.3);
 }
 textarea#message::placeholder {
     white-space: pre-line;
@@ -484,4 +508,80 @@ textarea#message:-ms-input-placeholder {
         width: 95% !important;
         margin: 0 auto;
     }
+}
+
+/* Platform and social link base styles */
+.platform-link,
+.social-link {
+    color: #6b7a8f;
+    font-size: 1.75rem;
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(107,122,143,0.05);
+    backdrop-filter: blur(5px);
+}
+
+/* Unified hover effects */
+.platform-link:hover,
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Platform-specific hover colors */
+.platform-link:hover .bi-spotify,
+.social-link:hover .bi-spotify {
+    color: #1DB954;
+    text-shadow: 0 0 10px rgba(29,185,84,0.3);
+}
+
+.platform-link:hover .bi-apple,
+.social-link:hover .bi-apple {
+    color: #FC3C44;
+    text-shadow: 0 0 10px rgba(252,60,68,0.3);
+}
+
+.platform-link:hover .bi-youtube,
+.social-link:hover .bi-youtube {
+    color: #FF0000;
+    text-shadow: 0 0 10px rgba(255,0,0,0.3);
+}
+
+.platform-link:hover .bi-instagram,
+.social-link:hover .bi-instagram {
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+    filter: drop-shadow(0 0 8px rgba(220,39,67,0.3));
+}
+
+.platform-link:hover .bi-tiktok,
+.social-link:hover .bi-tiktok {
+    color: #000000;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.platform-link:hover .bi-twitter,
+.social-link:hover .bi-twitter {
+    color: #1DA1F2;
+    text-shadow: 0 0 10px rgba(29,161,242,0.3);
+}
+
+/* Specific footer social links adjustments */
+.footer .social-link {
+    background: rgba(107, 122, 143, 0.1);
+    margin: 0.25rem;
+}
+
+.footer .social-link:hover {
+    background: rgba(107, 122, 143, 0.2);
 }
