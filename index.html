@@ -26,9 +26,10 @@
     <!-- NAV -->
     <nav class="navbar navbar-expand-lg fixed-top glass-nav">
       <div class="container">
-        <a class="navbar-brand fw-bold logo-text" href="#" data-section="hero"
-          >FMelody</a
-        >
+        <a class="navbar-brand fw-bold logo-text" href="#" data-section="hero">
+          <img src="images/f_melody_col_border_logo_trans.png" alt="FMelody Logo" style="height: 50px;" />
+        </a>
+        
         <button
           class="navbar-toggler"
           type="button"
@@ -183,23 +184,27 @@
                   <option value="2">2x</option>
                 </select>
               </div>
-              <div class="d-flex align-items-center mb-2">
-                <span id="current-ltmd" class="me-2" style="min-width: 40px"
-                  >0:00</span
+                <div
+                id="progress-bar-ltmd-container"
+                class="progress-bar-metallic"
                 >
-                <input
+                <div class="d-flex align-items-center mb-2 progress-bar-row">
+                  <span id="current-ltmd" class="me-2 progress-time">0:00</span>
+                  <input
                   type="range"
                   min="0"
                   max="100"
                   value="0"
-                  class="form-range flex-grow-1"
+                  class="form-range flex-grow-1 progress-range"
                   id="progress-ltmd"
-                  style="height: 4px"
-                />
-                <span id="duration-ltmd" class="ms-2" style="min-width: 40px"
-                  >0:00</span
-                >
-              </div>
+                  />
+                  <span id="duration-ltmd" class="ms-2 progress-time">0:00</span>
+                </div>
+                <div
+                  id="progress-bar-ltmd-bg"
+                  class="progress-bar-bg"
+                ></div>
+                </div>
               <div id="lyrics-ltmd" class="lyrics mt-3" style="min-height: 2em">
                 <!-- Lyrics will be loaded here -->
               </div>

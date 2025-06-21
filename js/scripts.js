@@ -1,3 +1,4 @@
+
 console.log("JS loaded");
 document.body.style.outline = "5px solid lime"; // Should see a green outline if CSS/JS both work
 
@@ -149,10 +150,44 @@ document.addEventListener("DOMContentLoaded", function () {
       setupLyrics();
     } catch (error) {
       console.error("Error loading lyrics:", error);
-      document.getElementById("lyrics-ltmd").innerHTML = `<span class="text-danger">Failed to load lyrics: ${error.message}</span>`;
+      document.getElementById(
+        "lyrics-ltmd"
+      ).innerHTML = `<span class="text-danger">Failed to load lyrics: ${error.message}</span>`;
     }
   }
 
   // Call loadLyrics directly since we're already inside DOMContentLoaded
   loadLyrics();
 });
+
+
+// function formatTime(sec) {
+//   if (isNaN(sec)) return "0:00";
+//   const m = Math.floor(sec / 60);
+//   const s = Math.floor(sec % 60);
+//   return `${m}:${s.toString().padStart(2, "0")}`;
+// }
+
+// function updateProgressBar() {
+//   const percent = audio.duration ? audio.currentTime / audio.duration : 0;
+//   // The input range is between 0 and 100
+//   progress.value = percent * 100;
+//   // Calculate gradient stops
+//   const redStop = percent * 100;
+//   progressBg.style.background = `linear-gradient(90deg, rgba(255,0,0,0.4) 0%, rgba(255,0,0,0.4) ${redStop}%, #007bff ${redStop}%, #007bff 100%)`;
+//   current.textContent = formatTime(audio.currentTime);
+//   duration.textContent = formatTime(audio.duration);
+// }
+
+// audio.addEventListener("timeupdate", updateProgressBar);
+// audio.addEventListener("loadedmetadata", updateProgressBar);
+
+// // Seek functionality
+// progress.addEventListener("input", function () {
+//   if (audio.duration) {
+//     audio.currentTime = (progress.value / 100) * audio.duration;
+//   }
+// });
+
+// // Initial paint
+// updateProgressBar();
