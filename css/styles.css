@@ -1,3 +1,5 @@
+@import '../svg/svg-styles.css';
+
 body {
   font-family: 'Urbanist', 'Inter', Arial, sans-serif;
   background: linear-gradient(135deg, #e0e6ed 0%, #bfc9d1 40%, #6b7a8f 100%);
@@ -48,13 +50,6 @@ body {
 .hero-bg, .about-bg, .music-bg, .contact-bg {
   background: transparent;
 }
-.hero-svg, .about-svg {
-  width: 100%;
-  max-width: 340px;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-}
 .metallic-text {
   background: linear-gradient(90deg, #e0e6ed, #bfc9d1 60%, #6b7a8f 100%);
   -webkit-background-clip: text;
@@ -84,12 +79,6 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-.music-card svg {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 1rem auto;
-  display: block;
-}
 .music-card:hover, .contact-card:hover { 
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 8px 32px 0 rgba(107,122,143,0.12);
@@ -117,12 +106,6 @@ body {
   border: 2px solid #6b7a8f;
   background: transparent;
 }
-@media (max-width: 767px) {
-  .hero-svg, .about-svg { max-width: 180px; }
-  .display-1 { font-size: 2.5rem; }
-  .display-4 { font-size: 1.5rem; }
-  .spa-section { padding-top: 80px; }
-}
 @media (max-width: 991px) {
   .music-card {
     max-width: 100%;
@@ -139,40 +122,46 @@ body {
   border: 4px solid #bfc9d1;
 }
 .lyrics {
-    min-height: 4.5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px; /* Reduced from 90px */
+  padding: 0.25rem; /* Reduced from 0.5rem */
+  line-height: 1.2; /* Reduced from 1.4 */
 }
 
 .lyrics span {
-    display: block;
-    color: #888;
-    transition: all 0.3s ease;
-    opacity: 0.3;
-    height: 1.5em;
-    overflow: hidden;
-    font-size: 1em;
+  display: none;
+  width: 100%;
+  text-align: center;
+  padding: 0.15rem 0; /* Reduced from 0.25rem */
+  transition: all 0.3s ease;
+  margin: 1px 0; /* Reduced from 2px */
 }
 
-.lyrics .active {
-    color: #222;
-    font-weight: 700;
-    opacity: 1;
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.08);
+.lyrics span.previous {
+  display: block;
+  opacity: 0.6;
+  transform: translateY(0);
+  font-size: 0.9em;
 }
 
-.lyrics .prev,
-.lyrics .next {
-    color: #555;
-    opacity: 0.8;
+.lyrics span.active {
+  display: block;
+  opacity: 1;
+  font-weight: bold;
+  color: #000000;
+  transform: translateY(0);
+  font-size: 1em;
+  margin: 2px 0; /* Reduced from 4px */
 }
 
-.lyrics span:not(.active):not(.prev):not(.next) {
-    opacity: 0;
-    height: 0;
-    pointer-events: none;
+.lyrics span.next {
+  display: block;
+  opacity: 0.6;
+  transform: translateY(0);
+  font-size: 0.9em;
 }
 
 /* Animations */
@@ -288,5 +277,105 @@ body {
 textarea#message::placeholder {
     white-space: pre-line;
     line-height: 1.5;
-    color: #6c757d;
+    color: #adb5bd;  /* Bootstrap's $gray-500 */
+    opacity: 0.75;
+}
+
+/* For Firefox */
+textarea#message::-moz-placeholder {
+    opacity: 0.75;
+    color: #adb5bd;
+}
+
+/* For Edge/IE */
+textarea#message:-ms-input-placeholder {
+    opacity: 0.75;
+    color: #adb5bd;
+}
+
+/* Standardize all section headers */
+.spa-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #fff;
+  animation: fadein 1s;
+  width: 100%; /* Ensure full width */
+}
+
+/* Update responsive styles */
+@media (max-width: 767px) {
+  .spa-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center !important; /* Force center alignment */
+    padding: 0 1rem; /* Add some padding */
+  }
+  
+  /* Ensure container is properly centered */
+  .spa-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Remove specific header background styles but keep alignment */
+.hero-bg h2,
+.about-bg h2,
+.music-bg h2,
+.contact-bg h2 {
+  background: transparent;
+  text-align: center;
+}
+
+/* Add writing animation styles */
+.writing-arm-container {
+    animation: writeAcross 4s infinite ease-in-out;
+    transform-origin: center;
+}
+
+@keyframes writeAcross {
+    0% {
+        transform: translateX(-50px) rotate(2deg);
+    }
+    50% {
+        transform: translateX(50px) rotate(-2deg);
+    }
+    100% {
+        transform: translateX(-50px) rotate(2deg);
+    }
+}
+
+.writing-arm {
+    animation: armTilt 4s infinite ease-in-out;
+    transform-origin: right bottom;
+}
+
+@keyframes armTilt {
+    0% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(-2deg);
+    }
+}
+
+.pen {
+    animation: penPressure 4s infinite ease-in-out;
+    transform-origin: bottom right;
+}
+
+@keyframes penPressure {
+    0%, 100% {
+        transform: scaleY(1) rotate(-2deg);
+    }
+    50% {
+        transform: scaleY(0.95) rotate(2deg);
+    }
 }
