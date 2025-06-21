@@ -55,14 +55,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.music-card, .contact-card {
-  background: rgba(255,255,255,0.85);
-  border: none;
-  border-radius: 1.5rem;
-  box-shadow: 0 2px 16px 0 rgba(107,122,143,0.08);
-  margin-bottom: 2rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
 .music-card {
   background: rgba(255,255,255,0.85);
   border: none;
@@ -468,4 +460,28 @@ textarea#message:-ms-input-placeholder {
 .progress-bar-metallic {
   background: linear-gradient(90deg, #e0e6ed 0%, #bfc9d1 60%, #6b7a8f 100%);
   box-shadow: 0 2px 12px 0 rgba(107,122,143,0.10);
+}
+
+/* Use only the latest contact card styles */
+.contact-card {
+    background: rgba(255,255,255,0.85);
+    border: none;
+    padding: 2.5rem;
+    width: 900px !important;  /* Force wider width */
+    max-width: 90vw;  /* Prevent horizontal scroll on mobile */
+}
+
+#contact .col-md-7 {
+    width: 900px !important;
+}
+
+@media (max-width: 991px) {
+    .contact-card {
+        padding: 1.5rem;
+    }
+    .row > .col-md-7,
+    #contact .col-md-7 {
+        width: 95% !important;
+        margin: 0 auto;
+    }
 }
