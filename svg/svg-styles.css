@@ -1,0 +1,84 @@
+.laptop-daw {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 20px rgba(107, 122, 143, 0.2));
+}
+
+.laptop-base {
+  fill: url(#laptop-metallic);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+.laptop-screen {
+  fill: url(#laptop-metallic);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.screen-content {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* Songwriter SVG styles */
+.songwriter-svg {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  filter: drop-shadow(0 10px 20px rgba(107, 122, 143, 0.2));
+}
+
+.writing-arm {
+  animation: write 3s ease-in-out infinite;
+  transform-origin: 380px 160px;
+}
+
+.pen {
+  animation: write 3s ease-in-out infinite;
+}
+
+.writing-line {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: writeLine 3s linear infinite;
+}
+
+@keyframes write {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes writeLine {
+  0% {
+    stroke-dashoffset: 100;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.song-title {
+    opacity: 0;
+    animation: fadeInTitle 1s ease-in forwards;
+}
+
+@keyframes fadeInTitle {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.macbook {
+    transition: all 0.3s ease;
+}
+
+.macbook:hover {
+    filter: url(#laptop-shadow) brightness(1.05);
+    transform: translateY(-2px);
+}

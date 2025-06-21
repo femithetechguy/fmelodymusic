@@ -86,7 +86,7 @@
                 <i class="bi bi-play-fill me-1"></i> Listen Now
               </a>
               <a
-                href="#booking_div"
+                href="#contact"
                 class="btn btn-outline-primary btn-lg rounded-pill px-4"
                 data-section="contact"
               >
@@ -131,77 +131,12 @@
             </div>
           </div>
           <div class="col-lg-6 text-center mb-5 mb-lg-0">
-            <!-- Animated SVG -->
-            <svg class="hero-svg animate-rotate" viewBox="0 0 400 400">
-              <defs>
-                <radialGradient id="g1" cx="50%" cy="50%" r="80%">
-                  <stop offset="0%" stop-color="#bfc9d1" stop-opacity="0.9" />
-                  <stop offset="100%" stop-color="#6b7a8f" stop-opacity="0.3" />
-                </radialGradient>
-                <linearGradient id="metallic" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#e0e6ed" />
-                  <stop offset="30%" stop-color="#bfc9d1" />
-                  <stop offset="60%" stop-color="#6b7a8f" />
-                  <stop offset="100%" stop-color="#e0e6ed" />
-                </linearGradient>
-              </defs>
-              <circle cx="200" cy="200" r="160" fill="url(#g1)" />
-              <g>
-                <rect
-                  x="190"
-                  y="80"
-                  width="20"
-                  height="160"
-                  rx="10"
-                  fill="url(#metallic)"
-                >
-                  <animate
-                    attributeName="y"
-                    values="80;120;80"
-                    dur="2s"
-                    repeatCount="indefinite"
-                  />
-                </rect>
-                <circle
-                  cx="200"
-                  cy="260"
-                  r="24"
-                  fill="#fff"
-                  stroke="url(#metallic)"
-                  stroke-width="6"
-                />
-                <rect
-                  x="220"
-                  y="120"
-                  width="12"
-                  height="80"
-                  rx="6"
-                  fill="#bfc9d1"
-                >
-                  <animate
-                    attributeName="y"
-                    values="120;160;120"
-                    dur="2.2s"
-                    repeatCount="indefinite"
-                  />
-                </rect>
-                <rect
-                  x="168"
-                  y="130"
-                  width="12"
-                  height="60"
-                  rx="6"
-                  fill="#bfc9d1"
-                >
-                  <animate
-                    attributeName="y"
-                    values="130;170;130"
-                    dur="1.8s"
-                    repeatCount="indefinite"
-                  />
-                </rect>
-              </g>
-            </svg>
+            <object
+              data="svg/laptop-daw.svg"
+              type="image/svg+xml"
+              class="hero-svg laptop-daw"
+              id="laptopSvg"
+            ></object>
           </div>
         </div>
       </div>
@@ -395,7 +330,7 @@
             </div>
           </div>
         </div>
-        <div class="my-5 d-flex justify-content-center" id="booking_div">
+        <div class="my-5 d-flex justify-content-center" id="#contact">
           <div
             style="
               height: 4px;
@@ -452,38 +387,14 @@
           </div>
           <div class="col-md-6 text-center mb-4 mb-md-0">
             <!-- SVG Portrait -->
-            <svg class="about-svg animate-rotate" viewBox="0 0 220 220">
-              <defs>
-                <linearGradient id="metallic2" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#e0e6ed" />
-                  <stop offset="30%" stop-color="#bfc9d1" />
-                  <stop offset="60%" stop-color="#6b7a8f" />
-                  <stop offset="100%" stop-color="#e0e6ed" />
-                </linearGradient>
-              </defs>
-              <circle cx="110" cy="80" r="60" fill="url(#metallic2)" />
-              <ellipse cx="110" cy="170" rx="55" ry="30" fill="#e0e6ed" />
-              <circle cx="110" cy="80" r="50" fill="#bfc9d1" opacity="0.5" />
-              <ellipse
-                cx="110"
-                cy="170"
-                rx="40"
-                ry="18"
-                fill="#6b7a8f"
-                opacity="0.2"
-              />
-              <text
-                x="110"
-                y="90"
-                text-anchor="middle"
-                fill="#6b7a8f"
-                font-size="22"
-                font-weight="bold"
-                font-family="Urbanist"
-              >
-                FM
-              </text>
-            </svg>
+            <object
+              data="svg/songwriter.svg"
+              type="image/svg+xml"
+              class="hero-svg songwriter-svg"
+              id="songwriterSvg"
+            >
+              <img src="svg/songwriter.svg" alt="Songwriter" />
+            </object>
           </div>
         </div>
       </div>
@@ -492,14 +403,12 @@
     <!-- CONTACT -->
     <section id="contact" class="spa-section">
       <div class="container">
-        <h2
-          class="display-4 fw-bold text-center mb-4 metallic-text animate-fadein"
-        >
+        <h2 class="display-4 fw-bold text-center mb-4 metallic-text">
           Contact
         </h2>
         <div class="row justify-content-center">
           <div class="col-md-7">
-            <div class="card contact-card p-4 animate-popin">
+            <div class="card contact-card p-4">
               <form action="https://formspree.io/f/xdkzdjzo" method="POST">
                 <div class="mb-3">
                   <label for="name" class="form-label">Name</label>
